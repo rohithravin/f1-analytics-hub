@@ -6,7 +6,7 @@ mathematical operations. It includes error handling and logging for all operatio
 
 Routes:
     POST /analyze: Analyzes and processes data records from a DataRequest
-    GET /mathadd: Performs addition operation on two numbers
+    POST /mathadd: Performs addition operation on two numbers
 
 Dependencies:
     - FastAPI for API routing and HTTP exception handling
