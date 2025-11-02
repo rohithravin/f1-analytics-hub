@@ -35,7 +35,7 @@ class Settings(BaseSettings):
     debug: bool = True
     host: str = "127.0.0.1"
     port: int = 8000
-
+    cors_allowed_origins: list[str] = ["*"]
     class Config:
         """
         Configuration class for the F1 Analytics Hub service.
