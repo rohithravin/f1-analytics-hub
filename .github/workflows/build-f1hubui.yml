@@ -25,8 +25,9 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: "npm"
+            node-version: ${{ matrix.node-version }}
+            cache: "npm"
+            cache-dependency-path: f1hubui/package-lock.json
 
       # 3. Install dependencies inside f1hubui
       - name: Install dependencies
