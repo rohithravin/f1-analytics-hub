@@ -1,0 +1,40 @@
+name: Build F1Hub UI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+      # 1. Checkout repo
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+            node-version: ${{ matrix.node-version }}
+            cache: "npm"
+            cache-dependency-path: f1hubui/package-lock.json
+
+      # 3. Install dependencies inside f1hubui
+      - name: Install dependencies
+        working-directory: f1hubui
+        run: npm install
+
+      # 4. Build the project inside f1hubui
+      - name: Build
+        working-directory: f1hubui
+        run: npm run build
