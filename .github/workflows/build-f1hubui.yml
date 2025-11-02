@@ -17,25 +17,23 @@ jobs:
         node-version: [25.1] # match your local Node version
 
     steps:
-      # Checkout the repo
+      # 1. Checkout repo
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Setup Node.js
+      # 2. Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
 
-      # Install dependencies
+      # 3. Install dependencies inside f1hubui
       - name: Install dependencies
-        run: |
-            cd f1hubui
-            npm install
+        working-directory: f1hubui
+        run: npm install
 
-      # Build the project
+      # 4. Build the project inside f1hubui
       - name: Build
-        run: |
-            cd f1hubui
-            npm run build
+        working-directory: f1hubui
+        run: npm run build
