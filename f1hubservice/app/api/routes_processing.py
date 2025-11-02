@@ -45,7 +45,7 @@ def analyze_data(req: DataRequest):
         raise HTTPException(status_code=500, detail=str(exc))
 
 @router.post("/mathadd", response_model = MathAddResponse)
-def do_math(req: MathAddRequest) -> int:
+def do_math(req: MathAddRequest):
     """
     Performs mathematical addition operation on two numbers from a request object.
     Args:
