@@ -5,7 +5,7 @@ Currently it provides a placeholder `process_data` function that returns
 the sum of two integers. Replace or extend this with real data processing
 logic as the project evolves.
 """
-from typing import  Dict, Any
+from typing import Dict, Any
 
 def process_data(x: int, y: int) -> int:
     """Return the sum of two integers.
