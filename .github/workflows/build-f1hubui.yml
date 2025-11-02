@@ -1,0 +1,41 @@
+name: Build F1Hub UI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [25.1] # match your local Node version
+
+    steps:
+      # Checkout the repo
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+            cd f1hubui
+            npm install
+
+      # Build the project
+      - name: Build
+        run: |
+            cd f1hubui
+            npm run build
