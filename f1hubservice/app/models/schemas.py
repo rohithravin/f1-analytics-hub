@@ -5,7 +5,7 @@ This module defines the request and response data models used for API endpoints
 in the F1 Analytics Hub service. These schemas provide validation and 
 serialization for data transfer objects.
 """
-from typing import Any, Dict, List
+from typing import List
 from pydantic import BaseModel
 
 
