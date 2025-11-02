@@ -5,7 +5,7 @@ client = TestClient(app)
 
 def test_mathadd_basic():
     payload = {
-       "x": 100,
+        "x": 100,
         "y": 200,
     }
     resp = client.post("/process/mathadd", json=payload)
