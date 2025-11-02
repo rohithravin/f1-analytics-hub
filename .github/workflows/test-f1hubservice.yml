@@ -37,11 +37,11 @@ jobs:
       - name: Install dependencies
         run: |
           poetry config virtualenvs.create true
-          cd f1hubservice
           poetry install --no-interaction --no-ansi
+        working-directory: f1hubservice
 
       # Step 5: Run tests
       - name: Run tests with pytest
         run: |
-          cd f1hubservice
           poetry run pytest tests --maxfail=1 --disable-warnings -q
+        working-directory: f1hubservice
