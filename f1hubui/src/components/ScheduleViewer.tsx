@@ -283,48 +283,6 @@ const containerStyle: React.CSSProperties = {
   boxSizing: "border-box",
 };
 
-const headerContainerStyle: React.CSSProperties = {
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  marginBottom: "30px",
-  flexWrap: "wrap",
-  gap: "20px",
-};
-
-const titleStyle: React.CSSProperties = {
-  margin: 0,
-  fontSize: "32px",
-  fontWeight: "700",
-  color: "#e10600",
-  letterSpacing: "-0.5px",
-};
-
-const yearSelectorStyle: React.CSSProperties = {
-  display: "flex",
-  alignItems: "center",
-  gap: "12px",
-};
-
-const labelStyle: React.CSSProperties = {
-  fontSize: "16px",
-  fontWeight: "600",
-  color: "#333",
-};
-
-const selectStyle: React.CSSProperties = {
-  padding: "10px 16px",
-  fontSize: "16px",
-  border: "2px solid #e10600",
-  borderRadius: "8px",
-  backgroundColor: "white",
-  color: "#333",
-  cursor: "pointer",
-  fontWeight: "600",
-  outline: "none",
-  transition: "all 0.2s ease",
-};
-
 const loadingStyle: React.CSSProperties = {
   display: "flex",
   flexDirection: "column",
@@ -473,25 +431,6 @@ const cardContentStyle: React.CSSProperties = {
   borderTop: "1px solid rgba(0, 0, 0, 0.06)",
   animation: "slideDown 0.3s ease",
   background: "rgba(255, 255, 255, 0.3)",
-};
-
-const eventNameContainerStyle: React.CSSProperties = {
-  marginTop: "20px",
-  marginBottom: "24px",
-};
-
-const eventNameStyle: React.CSSProperties = {
-  margin: 0,
-  fontSize: "18px",
-  fontWeight: "600",
-  color: "#1d1d1f",
-  marginBottom: "8px",
-};
-
-const eventDateStyle: React.CSSProperties = {
-  margin: 0,
-  fontSize: "14px",
-  color: "#6e6e73",
 };
 
 const sessionsGridStyle: React.CSSProperties = {
