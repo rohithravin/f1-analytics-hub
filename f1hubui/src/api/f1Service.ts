@@ -19,3 +19,18 @@ export const mathAdd = async (x: number, y: number) => {
     throw err;
   }
 };
+
+/**
+ * Fetches the F1 schedule for a given year.
+ * @param year - the year to get the schedule for
+ * @returns the F1 schedule data for the specified year
+ */
+export const getSchedule = async (year: number) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/schedule/${year}`);
+    return response.data;
+  } catch (err) {
+    console.error("API error:", err);
+    throw err;
+  }
+};
