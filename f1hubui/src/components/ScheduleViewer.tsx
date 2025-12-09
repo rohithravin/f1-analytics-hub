@@ -88,13 +88,14 @@ export default function ScheduleViewer({ selectedYear }: { selectedYear: number 
     if (!dateStr) {
       return "CANCELLED";
     }
-    return new Date(dateStr).toLocaleString("en-US", {
+    // FastF1 returns UTC times without the 'Z' suffix, so we need to append it
+    // to ensure JavaScript parses it as UTC before converting to local time
+    const utcDateStr = dateStr.endsWith('Z') ? dateStr : dateStr + 'Z';
+    return new Date(utcDateStr).toLocaleString("en-US", {
       month: "short",
       day: "numeric",
       hour: "2-digit",
       minute: "2-digit",
-      timeZone: "UTC",
-      timeZoneName: "short",
     });
   };
 
