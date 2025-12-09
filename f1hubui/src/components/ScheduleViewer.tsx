@@ -136,7 +136,7 @@ export default function ScheduleViewer({ selectedYear }: { selectedYear: number 
                     <div style={raceInfoContainerStyle}>
                       <h4 style={raceNameStyle}>{round.OfficialEventName}</h4>
                       <p style={raceDateStyle}>
-                        {new Date(round.EventDate).toLocaleDateString("en-US", {
+                        {new Date(round.GPDateUtc + 'Z').toLocaleDateString("en-US", {
                           weekday: "short",
                           month: "short",
                           day: "numeric",
